@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="gu">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Trees Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <h1>Trees Lab</h1>
+    <p class="sub">Tree ma insert, delete, search karo ane step-by-step juo ke andar shu thay chhe.</p>
+    <div class="card">
+      <div class="chips" id="chips" role="group" aria-label="Tree type"></div>
+      <p class="meta" style="margin:8px 0 0">Tree type badalso to tree clear thai jashe.</p>
+    </div>
+    <div class="card">
+      <div class="row">
+        <input type="text" id="inp" aria-label="Value">
+        <button id="ins" class="go">Insert</button><button id="del">Delete</button><button id="srch">Search</button>
+        <button id="rnd">Random</button><button id="clr">Clear</button>
+      </div>
+      <div class="row" id="trv" style="margin-top:8px"><span class="meta">Traversal:</span>
+        <button data-t="in">Inorder</button><button data-t="pre">Preorder</button><button
+          data-t="post">Postorder</button><button data-t="lvl">Level order</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="stage"><svg id="svg" role="img" aria-label="Tree"></svg></div>
+      <div class="legend"><span><b style="background:var(--cmp)"></b>Compare</span><span><b
+            style="background:var(--srt)"></b>Navo / mali gayo / visited</span><span><b
+            style="background:var(--swp)"></b>Swap / delete / rotation</span><span><b
+            style="background:var(--piv)"></b>Special (successor, pivot)</span></div>
+    </div>
+    <div class="card">
+      <p class="msg" id="msg" aria-live="polite"></p>
+      <div class="row" style="margin-top:8px">
+        <button id="rst">Reset</button><button id="prev">Pachhal</button><button id="play"
+          class="go">Play</button><button id="next">Aagal</button>
+        <label class="meta">Speed <input type="range" id="spd" min="1" max="10" value="5"></label>
+        <span class="meta" id="cnt"></span>
+      </div>
+    </div>
+    <div class="card"><b id="an"></b>
+      <p id="ad" style="margin:4px 0"></p>
+      <p class="meta" id="ac" style="margin:0"></p>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>

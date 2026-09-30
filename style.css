@@ -1,0 +1,306 @@
+:root {
+    --bg: #e9eef5;
+    --card: #fff;
+    --ink: #1b2a41;
+    --mut: #5b6b82;
+    --bar: #8fa3c4;
+    --cmp: #f2b134;
+    --swp: #e4572e;
+    --srt: #2a9d8f;
+    --piv: #6a4c93;
+    --line: #cfd8e6;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px)
+}
+
+@media (prefers-color-scheme:dark) {
+    :root:not([data-theme="light"]) {
+        --bg: #121a26;
+        --card: #1b2636;
+        --ink: #e6edf7;
+        --mut: #93a4bd;
+        --bar: #5d7194;
+        --line: #2e3d55
+    }
+}
+
+:root[data-theme="dark"] {
+    --bg: #121a26;
+    --card: #1b2636;
+    --ink: #e6edf7;
+    --mut: #93a4bd;
+    --bar: #5d7194;
+    --line: #2e3d55
+}
+
+html {
+    scroll-padding-top: env(safe-area-inset-top, 0px)
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.5 "Trebuchet MS", "Segoe UI", system-ui, sans-serif
+}
+
+main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 16px
+}
+
+h1 {
+    font: 700 28px/1.2 Georgia, "Times New Roman", serif;
+    margin: 8px 0 2px
+}
+
+.sub {
+    color: var(--mut);
+    margin: 0 0 14px
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 12px
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px
+}
+
+button,
+input {
+    font: inherit;
+    color: var(--ink)
+}
+
+button {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 7px 12px;
+    cursor: pointer
+}
+
+button:hover {
+    border-color: var(--bar)
+}
+
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid var(--cmp);
+    outline-offset: 1px
+}
+
+.chip[aria-pressed=true] {
+    background: var(--ink);
+    color: var(--bg);
+    border-color: var(--ink)
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center
+}
+
+input[type=text] {
+    flex: 1;
+    min-width: 160px;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 8px 10px
+}
+
+.stage {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    height: 260px;
+    padding: 22px 4px 4px;
+    overflow-x: auto
+}
+
+.bar {
+    flex: 1;
+    min-width: 22px;
+    background: var(--bar);
+    border-radius: 5px 5px 0 0;
+    position: relative;
+    transition: height .25s, background .2s, opacity .2s
+}
+
+.bar span {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700
+}
+
+.bar.s {
+    background: var(--srt)
+}
+
+.bar.c {
+    background: var(--cmp)
+}
+
+.bar.p {
+    background: var(--piv)
+}
+
+.bar.w {
+    background: var(--swp)
+}
+
+.bar.d {
+    opacity: .3
+}
+
+.idx {
+    display: flex;
+    gap: 4px;
+    padding: 0 4px;
+    color: var(--mut);
+    font-size: 12px
+}
+
+.idx i {
+    flex: 1;
+    min-width: 22px;
+    text-align: center;
+    font-style: normal
+}
+
+.msg {
+    font-size: 18px;
+    min-height: 56px;
+    margin: 0
+}
+
+.meta {
+    color: var(--mut);
+    font-size: 14px
+}
+
+.legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 13px;
+    color: var(--mut);
+    margin-top: 8px
+}
+
+.legend b {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    margin-right: 5px;
+    vertical-align: -1px
+}
+
+.go {
+    background: var(--ink);
+    color: var(--bg);
+    border-color: var(--ink)
+}
+
+input[type=range] {
+    accent-color: var(--srt)
+}
+
+svg {
+    display: block;
+    margin: 0 auto;
+    height: auto;
+    max-width: 100%;
+    min-height: 120px
+}
+
+.ed {
+    stroke: var(--mut);
+    stroke-width: 1.5
+}
+
+.nd circle {
+    fill: var(--bar);
+    stroke: var(--ink);
+    stroke-width: 1.5
+}
+
+.nd .ring {
+    fill: none;
+    stroke: var(--ink);
+    stroke-width: 1.5
+}
+
+.nd text {
+    font: 700 13px "Trebuchet MS", "Segoe UI", sans-serif;
+    fill: var(--ink);
+    text-anchor: middle;
+    dominant-baseline: central
+}
+
+.nd .sb {
+    font-size: 10px;
+    font-weight: 400;
+    fill: var(--mut)
+}
+
+.nd.c circle {
+    fill: var(--cmp)
+}
+
+.nd.s circle,
+.nd.v circle {
+    fill: var(--srt)
+}
+
+.nd.w circle {
+    fill: var(--swp)
+}
+
+.nd.p circle {
+    fill: var(--piv)
+}
+
+.nd.s text,
+.nd.v text,
+.nd.w text,
+.nd.p text {
+    fill: #fff
+}
+
+.nd.c text {
+    fill: #111
+}
+
+.mt {
+    fill: var(--mut);
+    font-size: 14px
+}
+
+.stage {
+    display: block;
+    height: auto;
+    padding: 8px 0;
+    overflow-x: auto
+}
